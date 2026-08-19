@@ -8,7 +8,7 @@ set_global_assignment -name SDC_FILE PinballAction.sdc
 set_global_assignment -name QIP_FILE rtl/pll/pll.qip
 
 # T80 Z80 CPU core
-set_global_assignment -name QIP_FILE sys/t80/t80.qip
+set_global_assignment -name QIP_FILE rtl/t80/t80.qip
 
 # Core RTL
 set_global_assignment -name SYSTEMVERILOG_FILE rtl/pbaction.sv
