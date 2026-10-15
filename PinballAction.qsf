@@ -53,13 +53,16 @@ source sys/sys.tcl
 source sys/sys_analog.tcl
 source files.qip
 
-set_global_assignment -name VERILOG_FILE rtl/JT49/jt49.v
-set_global_assignment -name VERILOG_FILE rtl/JT49/jt49_bus.v
-set_global_assignment -name VERILOG_FILE rtl/JT49/jt49_cen.v
-set_global_assignment -name VERILOG_FILE rtl/JT49/jt49_div.v
-set_global_assignment -name VERILOG_FILE rtl/JT49/jt49_eg.v
-set_global_assignment -name VERILOG_FILE rtl/JT49/jt49_exp.v
-set_global_assignment -name VERILOG_FILE rtl/JT49/jt49_noise.v
+# [MiSTer-DB9 BEGIN] - lowercase rtl/jt49 path: the dir is rtl/jt49, and the case-mismatched
+# rtl/JT49 duplicates of files.qip crash Quartus synthesis on Linux (SGN internal error)
+set_global_assignment -name VERILOG_FILE rtl/jt49/jt49.v
+set_global_assignment -name VERILOG_FILE rtl/jt49/jt49_bus.v
+set_global_assignment -name VERILOG_FILE rtl/jt49/jt49_cen.v
+set_global_assignment -name VERILOG_FILE rtl/jt49/jt49_div.v
+set_global_assignment -name VERILOG_FILE rtl/jt49/jt49_eg.v
+set_global_assignment -name VERILOG_FILE rtl/jt49/jt49_exp.v
+set_global_assignment -name VERILOG_FILE rtl/jt49/jt49_noise.v
+# [MiSTer-DB9 END]
 
 set_global_assignment -name ENABLE_SIGNALTAP OFF
 # set_global_assignment -name USE_SIGNALTAP_FILE pbaction_stp.stp
